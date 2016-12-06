@@ -72,8 +72,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     $(LOCAL_PATH)/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
+    audio_amplifier.msm8996 \
     audiod \
     audio.a2dp.default \
     audio.primary.msm8996 \
