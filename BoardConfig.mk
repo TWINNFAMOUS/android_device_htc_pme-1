@@ -169,6 +169,9 @@ TARGET_USES_NQ_NFC := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
