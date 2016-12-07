@@ -20,6 +20,10 @@ DEVICE_PATH := device/htc/pme
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
+# Use Snapdragon LLVM, if available
+NDK_TOOLCHAIN_VERSION := clang
+TARGET_USE_SDCLANG := true
+
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := pme,pmeuhl,pmewhl,pmewl,pmeul,htc_pmeuhl,htc_pmewhl,htc_pmewl,htc_pmeul
 
@@ -60,6 +64,9 @@ TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/htc/msm8996
 TARGET_KERNEL_CONFIG := cyanogenmod_pme_defconfig
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 
 # Audio
 #AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -142,6 +149,9 @@ USE_DEVICE_SPECIFIC_GPS := true
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_pme
+TARGET_RECOVERY_DEVICE_MODULES := libinit_pme
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
